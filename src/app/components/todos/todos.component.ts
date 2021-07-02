@@ -25,6 +25,7 @@ export class TodosComponent implements OnInit {
     ];
   }
 
+  //toggles the class of the todo and applies css on the id
   toggleDone(i: number) {
     this.todos.map((value, index) => {
       if (index === i) value.completed = !value.completed;
@@ -32,10 +33,12 @@ export class TodosComponent implements OnInit {
     });
   }
 
+  //matches the id of the todo and deletes it
   deleteTodo(i: number) {
     this.todos = this.todos.filter((value, index) => index !== i);
   }
 
+  //adds todo by matchinging it to the binded input above and setting it to false, clears input by resetting value to empty string
   addTodo() {
     this.todos.push({
       content: this.inputTodo,
